@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  cursor: url(images/cursor.png), auto;
+  background-color: black;
+}
+.intro {
+  width: 1 00%;
+  max-width: 1300px;
+  height: 60vh;
+  margin: 0 auto;
+}
+.container {
+  font-size: 110%;
+  width: 100%;
+  max-width: 800px;
+  height: 30vh;
+  margin: 0 auto; /* Выравнивание по центру автоматический */
+}
+h1, h2, h3, h4, h5, h6 {
+  margin 0;
+}
+a {
+  display: inline-block; /*делаем чтобы наша ссылка из строчного элемента превратилась в строчно-блочный*/
+  line-height: 1; /*Задаём высоту строки (можно в пикселях)*/
+  color: white; /*Задаём цвет ссылки*/
+}
+a:after {
+  display: block; /*превращаем его в блочный элемент*/
+  right: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+  content: ""; /*контента в данном блоке не будет поэтому в кавычках ничего не ставим*/
+  height: 4px; /*задаём высоту линии*/
+  width: 0%; /*задаём начальную ширину элемента (линии)*/
+  background-color: #FFCBDB; /*цвет фона элемента*/
+  transition: width 0.4s ease-in-out; /*данное свойство отвечает за плавное изменение ширины. Здесь можно задать время анимации в секундах (в данном случае задано 0.4 секунды)*/
+}
+a:hover:after, a:focus:after {
+  width: 100%;
+}
+a:hover {
+  color: #FCB4D5;
+}
+.mob {
+  line-height: 1.2;
+  padding: 20px
+}
+.video p {
+  text-align: center;
+}
+.video {
+  max-width: 800px;
+}
+@media (max-width:768px) {
+  .container {
+    max-width: 390px;
+    font-size: 100%;
+  }
+  @media (max-width:520px) {
+    .mob {
+      line-height: 1.2;
+      padding: 20px
+    }
+    iframe {
+      max-width: 385px;
+      max-height: 300px;
+    }
+  }

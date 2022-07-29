@@ -1,0 +1,213 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+  cursor: url(images/cursor.png), auto;
+}
+section {
+  position: relative;
+  width: 110vW;
+  background: url("images/back.png") no-repeat;
+  background-position: center;
+  background-size: 90%;
+  transition: top 400ms ease-in-out;
+  z-index: 0;
+}
+.container {
+  font-size: 110%;
+  width: 100%;
+  max-width: 1000px;
+  height: 40vh;
+  margin: 0 auto; /* Выравнивание по центру автоматический */
+}
+.list_container {
+  width: 100%;
+  max-width: 800px;
+  height: 40vh;
+  margin: 0 auto; /* Выравнивание по центру автоматический */
+}
+.intro {
+  position: absolute; /* Абсолютное позиционирование */
+  z-index: 1;
+  width: 100%;
+  height: 30vh;
+  margin: 0 auto;
+}
+.right_ol {
+  float: right; /* Выравнивание по правому краю  */
+  margin: 20px 0 0px 7px; /* Отступы вокруг картинки */
+}
+h1, h2, h3, h4, h5, h6 {
+  margin 0;
+}
+li {
+  text-decoration: none; /* Убирает подчеркивание для ссылок */
+}
+a {
+  text-decoration: none; /*Убираем стандартное подчёркивание ссылки если оно ещё не убрано*/
+  display: inline-block; /*делаем чтобы наша ссылка из строчного элемента превратилась в строчно-блочный*/
+  line-height: 1; /*Задаём высоту строки (можно в пикселях)*/
+  color: white; /*Задаём цвет ссылки*/
+}
+a:after {
+  display: block; /*превращаем его в блочный элемент*/
+  right: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+  content: ""; /*контента в данном блоке не будет поэтому в кавычках ничего не ставим*/
+  height: 2px; /*задаём высоту линии*/
+  width: 0%; /*задаём начальную ширину элемента (линии)*/
+  background-color: #FFCBDB; /*цвет фона элемента*/
+  transition: width 0.4s ease-in-out; /*данное свойство отвечает за плавное изменение ширины. Здесь можно задать время анимации в секундах (в данном случае задано 0.4 секунды)*/
+}
+a:hover:after, a:focus:after {
+  width: 100%;
+}
+a:hover {
+  color: #FCB4D5;
+}
+ol {
+  line-height: 1.7;
+  list-style-type: none; /* Убираем исходные маркеры */
+  counter-reset: item; /* Обнуляем счетчик списка */
+}
+li:nth-child(-n+9)::before {
+  content: '0'counter(item);
+  counter-increment: item; /* Задаём имя счетчика */
+}
+li:nth-child(n+10)::before {
+  content: counter(item);
+  counter-increment: item; /* Задаём имя счетчика */
+}
+h3 {
+  line-height: 1.5;
+}
+.createdby {
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 13px;
+  letter-spacing: 4px;
+  color: rgb(85, 85, 85);
+}
+.createdby a {
+  color: #555555;
+}
+@media (max-width : 1269px) {
+  h2 {
+    font-size: 120%;
+  }
+  .list_container {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 90%;
+    max-height: 90%;
+  }
+  .left_ol {
+    float: left;
+    margin: 0 0 20px 0;
+  }
+  .right_ol {
+    float: none;
+    padding: 40px;
+    margin: 20px 0 0 0;
+  }
+  body {
+    max-width: 90%;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+  .conteiner {
+    float: left;
+    max-width: 280px;
+    font-size: 50%
+  }
+  ol {
+    line-height: 1.5;
+    float: center;
+    max-width: 80%;
+    line-height: 1.7;
+    list-style-type: none; /* Убираем исходные маркеры */
+    counter-reset: item; /* Обнуляем счетчик списка */
+  }
+  li:nth-child(-n+9)::before {
+    content: '0'counter(item);
+    counter-increment: item; /* Задаём имя счетчика */
+  }
+  li:nth-child(n+10)::before {
+    content: counter(item);
+    counter-increment: item; /* Задаём имя счетчика */
+  }
+}
+div.list_container {
+  max-height: 300%;
+  font-size: 85%;
+}
+}
+.container {
+  font-size: 80%;
+  width: 100%;
+  max-width: 280px;
+  height: 100vh;
+  margin: 0 auto;
+}
+section {
+  height: 27vh;
+}
+@media (max-width:520px) {
+  h2 {
+    font-size: 120%;
+  }
+  .list_container {
+    width: 100%;
+    max-width: 800px;
+    height: 50vh;
+    margin: 0 auto;
+    font-size: 90%
+  }
+  .left_ol {
+    float: left;
+  }
+  .right_ol {
+    float: left;
+    padding: 0px;
+    margin: 0 0 0 40px;
+  }
+  body {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .conteiner {
+    float: left;
+    max-width: 280px;
+    font-size: 50%
+  }
+  ol {
+    line-height: 1.5;
+    float: center;
+    max-width: 80%;
+    line-height: 1.7;
+    list-style-type: none; /* Убираем исходные маркеры */
+    counter-reset: item; /* Обнуляем счетчик списка */
+  }
+  li:nth-child(-n+9)::before {
+    content: '0'counter(item);
+    counter-increment: item; /* Задаём имя счетчика */
+  }
+  li:nth-child(n+10)::before {
+    content: counter(item);
+    counter-increment: item; /* Задаём имя счетчика */
+  }
+}
+div.list_container {
+  max-height: 300%;
+  font-size: 85%;
+}
+}
+.container {
+  font-size: 80%;
+  width: 100%;
+  max-width: 280px;
+  height: 100vh;
+  margin: 0 auto;
+}
+}
